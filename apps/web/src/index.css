@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 32% 92%;
+    --foreground: 214 30% 16%;
+    --card: 42 32% 92%;
+    --card-foreground: 214 30% 16%;
+    --popover: 42 32% 95%;
+    --popover-foreground: 214 30% 16%;
+    --primary: 209 38% 32%;
+    --primary-foreground: 42 32% 94%;
+    --secondary: 40 24% 86%;
+    --secondary-foreground: 214 30% 16%;
+    --muted: 40 22% 87%;
+    --muted-foreground: 212 14% 38%;
+    --accent: 355 40% 32%;
+    --accent-foreground: 42 32% 94%;
+    --destructive: 355 40% 32%;
+    --destructive-foreground: 42 32% 94%;
+    --border: 38 16% 70%;
+    --input: 38 16% 70%;
+    --ring: 209 38% 32%;
+    --radius: 0.125rem;
+    --sidebar-background: 42 32% 92%;
+    --sidebar-foreground: 214 30% 16%;
+    --sidebar-primary: 209 38% 32%;
+    --sidebar-primary-foreground: 42 32% 94%;
+    --sidebar-accent: 40 24% 86%;
+    --sidebar-accent-foreground: 214 30% 16%;
+    --sidebar-border: 38 16% 70%;
+    --sidebar-ring: 209 38% 32%;
+  }
+  .dark {
+    --background: 214 30% 12%;
+    --foreground: 42 32% 92%;
+    --card: 214 30% 12%;
+    --card-foreground: 42 32% 92%;
+    --popover: 214 30% 12%;
+    --popover-foreground: 42 32% 92%;
+    --primary: 42 32% 92%;
+    --primary-foreground: 214 30% 12%;
+    --secondary: 214 20% 20%;
+    --secondary-foreground: 42 32% 92%;
+    --muted: 214 20% 20%;
+    --muted-foreground: 40 12% 65%;
+    --accent: 355 35% 45%;
+    --accent-foreground: 42 32% 94%;
+    --destructive: 355 35% 45%;
+    --destructive-foreground: 42 32% 94%;
+    --border: 214 18% 26%;
+    --input: 214 18% 26%;
+    --ring: 40 12% 70%;
+    --sidebar-background: 214 30% 12%;
+    --sidebar-foreground: 42 32% 92%;
+    --sidebar-primary: 42 32% 92%;
+    --sidebar-primary-foreground: 214 30% 12%;
+    --sidebar-accent: 214 20% 20%;
+    --sidebar-accent-foreground: 42 32% 92%;
+    --sidebar-border: 214 18% 26%;
+    --sidebar-ring: 40 12% 70%;
+  }
+}
+
+body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  overflow-x: clip;
+}
+
+.font-display {
+  font-family: 'Amiri', serif;
+}
+
+/* خط مزدوج أرشيفي */
+.rule-double {
+  border-top: 3px solid hsl(var(--primary));
+  position: relative;
+}
+.rule-double::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  right: 0;
+  border-top: 1px solid hsl(var(--primary));
+}
+
+/* نقاط الفهرس */
+.leader-dots {
+  flex: 1 1 auto;
+  margin: 0 0.5rem;
+  border-bottom: 1px dotted hsl(var(--muted-foreground));
+  transform: translateY(-0.35em);
+  min-width: 1.5rem;
+}
+
+/* حبيبات الورق */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+}
