@@ -372,6 +372,7 @@ logger.error = (msg, options) => {
 }
 
 export default defineConfig({
+	base: '/Aussoul-warch-Chatibia/',
 	optimizeDeps: {
 		include: allDeps,
 	},
